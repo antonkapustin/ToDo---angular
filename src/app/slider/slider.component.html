@@ -1,0 +1,16 @@
+<div class="slider__item" *ngFor="let item of sliderItems">
+  <label class="label">
+    <input
+      #input
+      type="radio"
+      class="radio"
+      name="radio"
+      value="{{ item.icon }}"
+      data-dom="radio"
+      (click)="onChecked(input.value)"
+    />
+    <span class="icon icon_slider"><i class="fas fa-{{ item.icon }}"></i></span>
+    <p class="slider__text">{{ item.name }}</p>
+  </label>
+</div>
+`

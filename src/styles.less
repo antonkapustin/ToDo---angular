@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(./variables.less);
+@import url(./less/fontawesome.less);
+@import url(./less/_variables.less);
+@import url(./less/_icons.less);
+@import url(./less/solid.less);
+@import url(./less/brands.less);
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url(../assets/webfonts/Gilroy-Light.woff);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: @color-blue;
+  font-family: @font;
+}
+
+.button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  padding: 0 14px;
+  color: #ffffff;
+  font-size: 1em;
+  outline: none;
+}
+.title {
+  color: #ffffff;
+  font-size: 1.3em;
+  margin: 30px auto;
+}
+
+.label {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio {
+  appearance: none;
+  + .icon {
+    opacity: 0.5;
+  }
+
+  &:checked {
+    + .icon {
+      opacity: 1;
+    }
+  }
+}
+
+.icon {
+  min-height: 35px;
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-radius: 10px;
+
+  &_slider {
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  &_note {
+    color: @color-blue;
+    background-color: rgba(122, 175, 255, 0.2);
+  }
+}

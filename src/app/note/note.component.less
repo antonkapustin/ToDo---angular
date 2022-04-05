@@ -1,0 +1,43 @@
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 1px rgb(106 106 106 / 10%);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  // flex-shrink: 0;
+  // scroll-snap-align: start;
+  // transform-origin: center center;
+  // transform: scale(1);
+  // transition: transform 0.5s;
+
+  &__content {
+    margin: 0 auto 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__name {
+    font-size: 0.75em;
+    font-weight: 700;
+    margin: 0;
+  }
+  &__discription {
+    margin: 0;
+    font-size: 0.6em;
+    opacity: 0.7;
+  }
+  &__checkbox {
+    appearance: none;
+    + .icon i {
+      opacity: 0;
+      background-color: rgba(122, 175, 255, 0.2);
+    }
+
+    &:checked {
+      + .icon i {
+        opacity: 1;
+      }
+    }
+  }
+}

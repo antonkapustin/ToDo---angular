@@ -1,0 +1,22 @@
+<label class="note" *ngFor="let item of notes$ | async">
+  <span class="icon icon_note">
+    <i class="{{ item.icon }}"></i>
+  </span>
+  <div class="note__content">
+    <p class="note__name">{{ item.name }}</p>
+    <p class="note__discription">{{ item.about }}</p>
+  </div>
+
+  <input type="checkbox" class="note__checkbox" />
+  <span class="icon icon_note"><i class="fas fa-check-circle"></i></span>
+</label>
+
+<label class="note" *ngIf="notesLoading$ | async">
+  <span class="icon icon_note">
+    <i class="fas"></i>
+  </span>
+  <div class="note__content">
+    <p class="note__name">Loading...</p>
+    <p class="note__discription">Please wait.</p>
+  </div>
+</label>

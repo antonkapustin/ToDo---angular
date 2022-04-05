@@ -1,0 +1,64 @@
+@import url(./../../variables.less);
+
+.tabs {
+  height: calc(0px + @tabs-height);
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  &__select {
+    display: flex;
+  }
+
+  &__item {
+    width: 50%;
+    height: 45px;
+    text-align: center;
+    padding-top: 1.1em;
+    color: #7aafff;
+    position: relative;
+  }
+  &__input {
+    appearance: none;
+
+    &:checked {
+      + .tabs__title {
+        color: @color-darkblue;
+      }
+      + .tabs__title::after {
+        background-color: @color-darkblue;
+      }
+    }
+  }
+
+  &__slider {
+    padding: 15px;
+    height: 100%;
+    scroll-snap-align: start;
+    overflow: auto;
+    scroll-behavior: smooth;
+    flex-shrink: 1;
+    scroll-snap-type: y mandatory;
+  }
+  &__title {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 3px;
+      z-index: 1;
+      transition: margin 0.1s ease-out;
+      pointer-events: none;
+    }
+  }
+}

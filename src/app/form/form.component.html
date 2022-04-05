@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+  <input
+    type="text"
+    class="form__input"
+    placeholder="Add note"
+    formControlName="about"
+  />
+  <button class="button form__button" type="submit">
+    <i class="fas fa-plus"></i>
+  </button>
+  <div class="slider">
+    <div class="slider__item" *ngFor="let item of sliderItems">
+      <label class="label">
+        <input
+          app-input
+          formControlName="icon"
+          type="radio"
+          class="radio"
+          name="icon"
+          value="{{ item.icon }}"
+        />
+        <span class="icon icon_slider"
+          ><i class="fas fa-{{ item.icon }}"></i
+        ></span>
+        <p class="slider__text">{{ item.name }}</p>
+      </label>
+    </div>
+  </div>
+</form>
+
+<!-- <app-slider class="slider" (icon)="onChecked($event)"></app-slider> -->
